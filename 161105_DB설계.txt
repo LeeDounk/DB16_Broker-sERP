@@ -1,0 +1,86 @@
+CREATE DATABASE DB16_BrokersERP;
+
+USE DB16_BrokersERP;
+
+CREATE TABLE em_department(
+	dpcode INT(4) PRIMARY KEY,
+	dpname VARCHAR(16)
+);
+
+CREATE TABLE em_state(
+	stcode INT(4) PRIMARY KEY,
+	stname VARCHAR(16)
+);
+
+CREATE TABLE pr_type(
+	tpcode INT(4) PRIMARY KEY,
+	tpname VARCHAR(16)
+);
+
+CREATE TABLE product(
+	prcode INT(4) PRIMARY KEY,
+	prtype INT(4),
+	name VARCHAR(16),
+	detail VARCHAR(32),
+	FOREIGN KEY(prtype) REFERENCES pr_type(tpcode)
+);
+
+CREATE TABLE customer(
+	cscode INT(4) PRIMARY KEY,
+	name VARCHAR(16),
+	type VARCHAR(16),
+	reg_date INT(8)
+);
+
+CREATE TABLE cs_pr(
+	cscode INT(4),
+	prcode INT(4),
+	FOREIGN KEY(cscode) REFERENCES customer(cscode),
+	FOREIGN KEY(prcode) REFERENCES product(prcode)
+);
+
+CREATE TABLE employee(
+	emcode INT(4) PRIMARY KEY,
+	dpcode INT(4),
+	stcode INT(4),
+	prtype INT(4),
+	name VARCHAR(16),
+	phnum INT(13),
+	birth DATE,
+	addr VARCHAR(32),
+	hired_date DATE,
+	FOREIGN KEY(dpcode) REFERENCES em_department(dpcode),
+	FOREIGN KEY(stcode) REFERENCES em_state(stcode),
+	FOREIGN KEY(prtype) REFERENCES pr_type(tpcode)
+);
+
+CREATE TABLE bs_state(
+	stcode INT(4) PRIMARY KEY,
+	stname VARCHAR(16)
+);
+
+CREATE TABLE business(
+	bscode INT(4) PRIMARY KEY,
+	stcode INT(4),
+	product INT(4),
+	customer INT(4),
+	employee INT(4),
+	price INT(16),
+	FOREIGN KEY(stcode) REFERENCES bs_state(stcode),
+	FOREIGN KEY(customer) REFERENCES customer(cscode),
+	FOREIGN KEY(product) REFERENCES product(prcode),
+	FOREIGN KEY(employee) REFERENCES employee(emcode)
+);
+
+CREATE TABLE schedule(
+	sccode INT(4) PRIMARY KEY,
+	business INT(4),
+	date DATE,
+	detail VARCHAR(32),
+	FOREIGN KEY(business) REFERENCES business(bscode)
+);
+
+
+ALTER TABLE employee ADD bscode INT(4);
+ALTER TABLE employee ADD FOREIGN KEY (bscode) REFERENCES business(bscode);
+
