@@ -83,4 +83,3 @@ CREATE TABLE schedule(
 
 ALTER TABLE employee ADD bscode INT(4);
 ALTER TABLE employee ADD FOREIGN KEY (bscode) REFERENCES business(bscode);
-
