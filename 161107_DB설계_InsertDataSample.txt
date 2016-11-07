@@ -14,20 +14,28 @@ INSERT INTO pr_type(tpcode, tpname) VALUES(0000, 'TEST_pr_type');
 
 INSERT INTO product(prcode, prtype, name, detail)
 	VALUES(0000, 0000, 'TEST_product', 'TEST_detail');
+UPDATE product SET prcode=0 WHERE prcode=1;
 
 INSERT INTO customer(cscode, name, type, reg_date)
 	VALUES(0000, 'TEST_customer', 'TEST_type', '2016-11-07');
+UPDATE customer SET cscode=0 WHERE cscode=1;
 
 INSERT INTO cs_pr(cscode, prcode) VALUES(0000, 0000);
 
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
 	VALUES(0000,0000,0000,0000,'정범진','01047636834','1993-07-28','서울 성북구','2016-11-07');
+UPDATE employee SET emcode=0 WHERE emcode=1;
+INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
+	VALUES(0001,0000,0000,0000,'이돈욱','01047588861','1993-12-09','서울역 벤치','2016-11-07');
 
 INSERT INTO bs_state(stcode, stname) VALUES(0000, 'TEST_bs_state');
 
-INSERT INTO business VALUES(0000, 0000, 0000, 0000, 0000, 39800);
+INSERT INTO business(bscode, stcode, product, customer, employee, price)
+	VALUES(0000, 0000, 0000, 0000, 0000, 39800);
+UPDATE business SET bscode=0 WHERE bscode=1;
 
 INSERT INTO schedule(sccode, business, date, detail) VALUES(0000, 0000, '2016-11-07', 'TEST_detail');
+UPDATE schedule SET sccode=0 WHERE sccode=1;
 
 UPDATE employee SET bscode=0000 WHERE emcode=0000;
 

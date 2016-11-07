@@ -1,3 +1,5 @@
+DROP DATABASE DB16_BrokersERP;
+
 CREATE DATABASE DB16_BrokersERP;
 
 USE DB16_BrokersERP;
@@ -18,7 +20,7 @@ CREATE TABLE pr_type(
 );
 
 CREATE TABLE product(
-	prcode INT(4) PRIMARY KEY,
+	prcode INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	prtype INT(4),
 	name VARCHAR(16),
 	detail VARCHAR(32),
@@ -26,7 +28,7 @@ CREATE TABLE product(
 );
 
 CREATE TABLE customer(
-	cscode INT(4) PRIMARY KEY,
+	cscode INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(16),
 	type VARCHAR(16),
 	reg_date DATE
@@ -40,7 +42,7 @@ CREATE TABLE cs_pr(
 );
 
 CREATE TABLE employee(
-	emcode INT(4) PRIMARY KEY,
+	emcode INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	dpcode INT(4),
 	stcode INT(4),
 	prtype INT(4),
@@ -60,7 +62,7 @@ CREATE TABLE bs_state(
 );
 
 CREATE TABLE business(
-	bscode INT(4) PRIMARY KEY,
+	bscode INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	stcode INT(4),
 	product INT(4),
 	customer INT(4),
@@ -73,14 +75,25 @@ CREATE TABLE business(
 );
 
 CREATE TABLE schedule(
-	sccode INT(4) PRIMARY KEY,
+	sccode INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	business INT(4),
 	date DATE,
 	detail VARCHAR(32),
 	FOREIGN KEY(business) REFERENCES business(bscode)
 );
 
-
 ALTER TABLE employee ADD bscode INT(4);
 ALTER TABLE employee ADD FOREIGN KEY (bscode) REFERENCES business(bscode);
+
+
+DESC em_department;
+DESC em_state;
+DESC pr_type;
+DESC product;
+DESC customer;
+DESC cs_pr;
+DESC employee;
+DESC bs_state;
+DESC business;
+DESC schedule;
 
