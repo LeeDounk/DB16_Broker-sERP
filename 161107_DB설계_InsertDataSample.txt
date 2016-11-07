@@ -1,0 +1,44 @@
+
+INSERT INTO em_department(dpcode, dpname) VALUES(0000, '°æ¿µ');
+INSERT INTO em_department(dpcode, dpname) VALUES(0001, '¿µ¾÷');
+INSERT INTO em_department(dpcode, dpname) VALUES(0002, 'ÃÑ¹«');
+INSERT INTO em_department(dpcode, dpname) VALUES(0003, 'È«º¸');
+
+INSERT INTO em_state(stcode, stname) VALUES(0000, 'ÀçÁ÷');
+INSERT INTO em_state(stcode, stname) VALUES(0001, 'ÈÞ°¡');
+INSERT INTO em_state(stcode, stname) VALUES(0002, 'ÈÞÁ÷');
+INSERT INTO em_state(stcode, stname) VALUES(0003, 'Á¤Á÷');
+INSERT INTO em_state(stcode, stname) VALUES(0004, 'ÅðÁ÷');
+
+INSERT INTO pr_type(tpcode, tpname) VALUES(0000, 'TEST_pr_type');
+
+INSERT INTO product(prcode, prtype, name, detail)
+	VALUES(0000, 0000, 'TEST_product', 'TEST_detail');
+
+INSERT INTO customer(cscode, name, type, reg_date)
+	VALUES(0000, 'TEST_customer', 'TEST_type', '2016-11-07');
+
+INSERT INTO cs_pr(cscode, prcode) VALUES(0000, 0000);
+
+INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
+	VALUES(0000,0000,0000,0000,'Á¤¹üÁø','01047636834','1993-07-28','¼­¿ï ¼ººÏ±¸','2016-11-07');
+
+INSERT INTO bs_state(stcode, stname) VALUES(0000, 'TEST_bs_state');
+
+INSERT INTO business VALUES(0000, 0000, 0000, 0000, 0000, 39800);
+
+INSERT INTO schedule(sccode, business, date, detail) VALUES(0000, 0000, '2016-11-07', 'TEST_detail');
+
+UPDATE employee SET bscode=0000 WHERE emcode=0000;
+
+select * from em_department;
+select * from em_state;
+select * from pr_type;
+select * from product;
+select * from customer;
+select * from cs_pr;
+select * from employee;
+select * from bs_state;
+select * from business;
+select * from schedule;
+
