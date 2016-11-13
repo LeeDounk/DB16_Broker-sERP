@@ -1,41 +1,46 @@
 
-INSERT INTO em_department(dpcode, dpname) VALUES(0000, '∞Êøµ');
-INSERT INTO em_department(dpcode, dpname) VALUES(0001, 'øµæ˜');
-INSERT INTO em_department(dpcode, dpname) VALUES(0002, '√—π´');
-INSERT INTO em_department(dpcode, dpname) VALUES(0003, '»´∫∏');
+INSERT INTO em_department(dpcode, dpname) VALUES(0000, 'Í≤ΩÏòÅ');
+INSERT INTO em_department(dpcode, dpname) VALUES(0001, 'ÏòÅÏóÖ');
+INSERT INTO em_department(dpcode, dpname) VALUES(0002, 'Ï¥ùÎ¨¥');
+INSERT INTO em_department(dpcode, dpname) VALUES(0003, 'ÌôçÎ≥¥');
 
-INSERT INTO em_state(stcode, stname) VALUES(0000, '¿Á¡˜');
-INSERT INTO em_state(stcode, stname) VALUES(0001, '»ﬁ∞°');
-INSERT INTO em_state(stcode, stname) VALUES(0002, '»ﬁ¡˜');
-INSERT INTO em_state(stcode, stname) VALUES(0003, '¡§¡˜');
-INSERT INTO em_state(stcode, stname) VALUES(0004, '≈¡˜');
+INSERT INTO em_state(stcode, stname) VALUES(0000, 'Ïû¨ÏßÅ');
+INSERT INTO em_state(stcode, stname) VALUES(0001, 'Ìú¥Í∞Ä');
+INSERT INTO em_state(stcode, stname) VALUES(0002, 'Ìú¥ÏßÅ');
+INSERT INTO em_state(stcode, stname) VALUES(0003, 'Ï†ïÏßÅ');
+INSERT INTO em_state(stcode, stname) VALUES(0004, 'Ìá¥ÏßÅ');
 
 INSERT INTO pr_type(tpcode, tpname) VALUES(0000, 'TEST_pr_type');
 
 INSERT INTO product(prcode, prtype, name, detail)
 	VALUES(0000, 0000, 'TEST_product', 'TEST_detail');
 UPDATE product SET prcode=0 WHERE prcode=1;
+ALTER TABLE product AUTO_INCREMENT=1;
 
 INSERT INTO customer(cscode, name, type, reg_date)
 	VALUES(0000, 'TEST_customer', 'TEST_type', '2016-11-07');
 UPDATE customer SET cscode=0 WHERE cscode=1;
+ALTER TABLE customer AUTO_INCREMENT=1;
 
 INSERT INTO cs_pr(cscode, prcode) VALUES(0000, 0000);
 
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
-	VALUES(0000,0000,0000,0000,'¡§π¸¡¯','01047636834','1993-07-28','º≠øÔ º∫∫œ±∏','2016-11-07');
+	VALUES(0000,0000,0000,0000,'Ï†ïÎ≤îÏßÑ','01047636834','1993-07-28','ÏÑúÏö∏ ÏÑ±Î∂ÅÍµ¨','2016-11-07');
 UPDATE employee SET emcode=0 WHERE emcode=1;
+ALTER TABLE employee AUTO_INCREMENT=1;
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
-	VALUES(0001,0000,0000,0000,'¿Ãµ∑øÌ','01047588861','1993-12-09','º≠øÔø™ ∫•ƒ°','2016-11-07');
+	VALUES(0001,0000,0000,0000,'Ïù¥ÎèàÏö±','01047588861','1993-12-09','ÏÑúÏö∏Ïó≠ Î≤§Ïπò','2016-11-07');
 
 INSERT INTO bs_state(stcode, stname) VALUES(0000, 'TEST_bs_state');
 
 INSERT INTO business(bscode, stcode, product, customer, employee, price)
 	VALUES(0000, 0000, 0000, 0000, 0000, 39800);
 UPDATE business SET bscode=0 WHERE bscode=1;
+ALTER TABLE business AUTO_INCREMENT=1;
 
 INSERT INTO schedule(sccode, business, date, detail) VALUES(0000, 0000, '2016-11-07', 'TEST_detail');
 UPDATE schedule SET sccode=0 WHERE sccode=1;
+ALTER TABLE schedule AUTO_INCREMENT=1;
 
 UPDATE employee SET bscode=0000 WHERE emcode=0000;
 
