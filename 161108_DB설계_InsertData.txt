@@ -91,7 +91,7 @@ INSERT INTO cs_pr(cscode, prcode) VALUES(0018, 0018);
 INSERT INTO cs_pr(cscode, prcode) VALUES(0019, 0019);
 INSERT INTO cs_pr(cscode, prcode) VALUES(0020, 0020);
 
-INSERT INTO employee(dpcode, stcode, prtype, name, phnum, birth, addr, hired_date) VALUES(0000, 0000, 0001, '박나원', '01064785580', '1996-12-14', '대구 북구', '2016-11-07');
+INSERT INTO employee(dpcode, stcode, prtype, name, phnum, birth, addr, hired_date) VALUES(0000, 0000, 0001, '이돈욱', '01047588861', '1993-12-09', '서울역 벤치', '2016-11-07');
 INSERT INTO employee(dpcode, stcode, prtype, name, phnum, birth, addr, hired_date) VALUES(0000, 0000, 0002, '임진수', '01047588862', '1993-12-01', '서울 서대문구', '2016-11-07');
 INSERT INTO employee(dpcode, stcode, prtype, name, phnum, birth, addr, hired_date) VALUES(0000, 0001, 0002, '조완기', '01047588863', '1993-12-02', '서울 노원구', '2016-11-07');
 INSERT INTO employee(dpcode, stcode, prtype, name, phnum, birth, addr, hired_date) VALUES(0001, 0002, 0003, '전준호', '01047588864', '1993-12-03', '서울 동대문구', '2016-11-07');

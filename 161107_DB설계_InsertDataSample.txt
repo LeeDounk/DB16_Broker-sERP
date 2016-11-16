@@ -1,14 +1,14 @@
 
-INSERT INTO em_department(dpcode, dpname) VALUES(0000, 'ê²½ì˜');
-INSERT INTO em_department(dpcode, dpname) VALUES(0001, 'ì˜ì—…');
-INSERT INTO em_department(dpcode, dpname) VALUES(0002, 'ì´ë¬´');
-INSERT INTO em_department(dpcode, dpname) VALUES(0003, 'í™ë³´');
+INSERT INTO em_department(dpcode, dpname) VALUES(0000, '°æ¿µ');
+INSERT INTO em_department(dpcode, dpname) VALUES(0001, '¿µ¾÷');
+INSERT INTO em_department(dpcode, dpname) VALUES(0002, 'ÃÑ¹«');
+INSERT INTO em_department(dpcode, dpname) VALUES(0003, 'È«º¸');
 
-INSERT INTO em_state(stcode, stname) VALUES(0000, 'ì¬ì§');
-INSERT INTO em_state(stcode, stname) VALUES(0001, 'íœ´ê°€');
-INSERT INTO em_state(stcode, stname) VALUES(0002, 'íœ´ì§');
-INSERT INTO em_state(stcode, stname) VALUES(0003, 'ì •ì§');
-INSERT INTO em_state(stcode, stname) VALUES(0004, 'í‡´ì§');
+INSERT INTO em_state(stcode, stname) VALUES(0000, 'ÀçÁ÷');
+INSERT INTO em_state(stcode, stname) VALUES(0001, 'ÈŞ°¡');
+INSERT INTO em_state(stcode, stname) VALUES(0002, 'ÈŞÁ÷');
+INSERT INTO em_state(stcode, stname) VALUES(0003, 'Á¤Á÷');
+INSERT INTO em_state(stcode, stname) VALUES(0004, 'ÅğÁ÷');
 
 INSERT INTO pr_type(tpcode, tpname) VALUES(0000, 'TEST_pr_type');
 
@@ -25,11 +25,11 @@ ALTER TABLE customer AUTO_INCREMENT=1;
 INSERT INTO cs_pr(cscode, prcode) VALUES(0000, 0000);
 
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
-	VALUES(0000,0000,0000,0000,'ì •ë²”ì§„','01047636834','1993-07-28','ì„œìš¸ ì„±ë¶êµ¬','2016-11-07');
+	VALUES(0000,0000,0000,0001,'¹Ú³ª¿ø','01064785580','1996-12-14','´ë±¸ ºÏ±¸','2016-11-07');
 UPDATE employee SET emcode=0 WHERE emcode=1;
 ALTER TABLE employee AUTO_INCREMENT=1;
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
-	VALUES(0001,0000,0000,0000,'ì´ëˆìš±','01047588861','1993-12-09','ì„œìš¸ì—­ ë²¤ì¹˜','2016-11-07');
+	VALUES(0001,0000,0000,0000,'Á¤¹üÁø','01047636834','1993-07-28','¼­¿ï ¼ººÏ±¸','2016-11-07');
 
 INSERT INTO bs_state(stcode, stname) VALUES(0000, 'TEST_bs_state');
 
