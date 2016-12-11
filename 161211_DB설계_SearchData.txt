@@ -1,0 +1,26 @@
+show tables where Tables_in_db16_brokerserp like 'em%';
+show tables where Tables_in_db16_brokerserp like 'c%';
+show tables where Tables_in_db16_brokerserp like 'pr%';
+show tables where Tables_in_db16_brokerserp like 'b%';
+show tables where Tables_in_db16_brokerserp like 'sc%';
+
+
+show columns from TABLE where Type like 'varchar%';
+select * from TABLE where COLUMN like '%KEY%';
+
+show columns from employee where Type like 'varchar%';
+show columns from customer where Type like 'varchar%';
+show columns from product where Type like 'varchar%';
+show columns from business where Type like 'varchar%';
+show columns from schedule where Type like 'varchar%';
+
+select * from employee where name like '%이%';
+select * from employee where phnum like '%이%';
+select * from employee where addr like '%이%';
+select * from customer where name like '%이%';
+select * from customer where type like '%이%';
+select * from product where name like '%이%';
+select * from product where detail like '%이%';
+select * from schedule where detail like '%이%';
+
+
