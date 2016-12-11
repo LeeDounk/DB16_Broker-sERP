@@ -15,8 +15,8 @@ CREATE TABLE em_state(
 );
 
 CREATE TABLE pr_type(
-	tpcode INT(4) PRIMARY KEY,
-	tpname VARCHAR(16)
+	ptcode INT(4) PRIMARY KEY,
+	ptname VARCHAR(16)
 );
 
 CREATE TABLE product(
@@ -24,7 +24,7 @@ CREATE TABLE product(
 	prtype INT(4),
 	name VARCHAR(16),
 	detail VARCHAR(32),
-	FOREIGN KEY(prtype) REFERENCES pr_type(tpcode)
+	FOREIGN KEY(prtype) REFERENCES pr_type(ptcode)
 );
 
 CREATE TABLE customer(
@@ -53,7 +53,7 @@ CREATE TABLE employee(
 	hired_date DATE,
 	FOREIGN KEY(dpcode) REFERENCES em_department(dpcode),
 	FOREIGN KEY(stcode) REFERENCES em_state(stcode),
-	FOREIGN KEY(prtype) REFERENCES pr_type(tpcode)
+	FOREIGN KEY(prtype) REFERENCES pr_type(ptcode)
 );
 
 CREATE TABLE bs_state(
@@ -82,8 +82,8 @@ CREATE TABLE schedule(
 	FOREIGN KEY(business) REFERENCES business(bscode)
 );
 
-ALTER TABLE employee ADD bscode INT(4);
-ALTER TABLE employee ADD FOREIGN KEY (bscode) REFERENCES business(bscode);
+ALTER TABLE employee ADD business INT(4);
+ALTER TABLE employee ADD FOREIGN KEY (business) REFERENCES business(bscode);
 
 
 DESC em_department;

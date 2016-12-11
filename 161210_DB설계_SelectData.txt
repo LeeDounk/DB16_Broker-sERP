@@ -1,0 +1,66 @@
+select * from employee;
+select emcode, dpcode, stcode, prtype, name from employee;
+select employee.emcode as '사번',
+	em_department.dpname as '부서',
+	em_state.stname as '상태',
+	pr_type.ptname as '담당',
+	employee.name as '성명'
+	from employee
+	join em_state on (employee.stcode = em_state.stcode)
+	join em_department on (employee.dpcode = em_department.dpcode)
+	join pr_type on (employee.prtype = pr_type.ptcode);
+select employee.emcode as '사번',
+	em_department.dpname as '부서',
+	em_state.stname as '상태',
+	pr_type.ptname as '담당',
+	employee.name as '성명',
+	employee.phnum as '전화번호',
+	employee.birth as '생년월일',
+	employee.addr as '주소',
+	employee.hired_date as '입사일',
+	business.bscode as '담당거래'
+	from employee
+	join em_state on (employee.stcode = em_state.stcode)
+	join em_department on (employee.dpcode = em_department.dpcode)
+	join pr_type on (employee.prtype = pr_type.ptcode)
+	join business on (employee.business = business.bscode);
+
+select * from customer;
+select cscode, name, type, reg_date from customer;
+select cscode as '업체코드',
+	name as '업체명',
+	type as '업체종류',
+	reg_date as '등록일'
+	from customer;
+
+select * from product;
+select prcode, prtype, name, detail from product;
+select product.prcode as '물품코드',
+	pr_type.ptname as '분류',
+	product.name as '이름',
+	product.detail as '상세정보'
+	from product
+	join pr_type on (product.prtype = pr_type.ptcode);
+
+select * from business;
+select bscode, stcode, product, customer, employee, price from business;
+select business.bscode as '거래코드',
+	bs_state.stname as '거래상태',
+	product.name as '물품명',
+	customer.name as '업체명',
+	employee.name as '담당사원',
+	business.price as '금액'
+	from business
+	join bs_state on (business.stcode = bs_state.stcode)
+	join product on (business.product = product.prcode)
+	join customer on (business.customer = customer.cscode)
+	join employee on (business.employee = employee.emcode);
+
+select * from schedule;
+select sccode, business, date, detail from schedule;
+select schedule.sccode as '일정코드',
+	business.bscode as '거래코드',
+	schedule.date as '날짜',
+	schedule.detail  as '상세정보'
+	from schedule
+	join business on (schedule.business = business.bscode);

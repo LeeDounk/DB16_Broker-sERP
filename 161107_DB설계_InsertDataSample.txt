@@ -10,7 +10,7 @@ INSERT INTO em_state(stcode, stname) VALUES(0002, '绒流');
 INSERT INTO em_state(stcode, stname) VALUES(0003, '沥流');
 INSERT INTO em_state(stcode, stname) VALUES(0004, '硼流');
 
-INSERT INTO pr_type(tpcode, tpname) VALUES(0000, 'TEST_pr_type');
+INSERT INTO pr_type(ptcode, ptname) VALUES(0000, 'TEST_pr_type');
 
 INSERT INTO product(prcode, prtype, name, detail)
 	VALUES(0000, 0000, 'TEST_product', 'TEST_detail');
@@ -25,7 +25,7 @@ ALTER TABLE customer AUTO_INCREMENT=1;
 INSERT INTO cs_pr(cscode, prcode) VALUES(0000, 0000);
 
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
-	VALUES(0000,0000,0000,0001,'冠唱盔','01064785580','1996-12-14','措备 合备','2016-11-07');
+	VALUES(0000,0000,0000,0000,'冠唱盔','01064785580','1996-12-14','措备 合备','2016-11-07');
 UPDATE employee SET emcode=0 WHERE emcode=1;
 ALTER TABLE employee AUTO_INCREMENT=1;
 INSERT INTO employee(emcode, dpcode, stcode, prtype, name, phnum, birth, addr, hired_date)
@@ -42,7 +42,8 @@ INSERT INTO schedule(sccode, business, date, detail) VALUES(0000, 0000, '2016-11
 UPDATE schedule SET sccode=0 WHERE sccode=1;
 ALTER TABLE schedule AUTO_INCREMENT=1;
 
-UPDATE employee SET bscode=0000 WHERE emcode=0000;
+UPDATE employee SET business=0000 WHERE emcode=0000;
+UPDATE employee SET business=0000 WHERE emcode=0001;
 
 select * from em_department;
 select * from em_state;
